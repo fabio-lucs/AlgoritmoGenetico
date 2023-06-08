@@ -1,5 +1,6 @@
 import time
 
+
 class Item:
     def __init__(self, weight, value):
         self.weight = weight
@@ -20,8 +21,29 @@ def knapsack_greedy(items, capacity):
     return final_solution, total_weight, total_value
 
 
-items = [Item(10, 60), Item(20, 100), Item(30, 120)]
-capacity = 32
+items = [
+    # Exemplo com 5 itens
+    Item(10, 15),  # Item 1: peso = 10, valor = 15
+    Item(40, 90),  # Item 2: peso = 40, valor = 90
+    Item(26, 50),  # Item 3: peso = 26, valor = 50
+    Item(32, 60),  # Item 4: peso = 32, valor = 60
+    Item(8, 12),  # Item 5: peso = 8, valor = 12
+]
+
+# Exemplo com 10 itens
+# Item(10, 15),   Item 1: peso = 10, valor = 15
+# Item(40, 90),  # Item 2: peso = 40, valor = 90
+# Item(26, 50),  # Item 3: peso = 26, valor = 50
+# Item(32, 60),  # Item 4: peso = 32, valor = 60
+# Item(8, 12),  # Item 5: peso = 8, valor = 12
+# Item(15, 30),  # Item 6: peso = 15, valor = 30
+# Item(5, 20),  # Item 7: peso = 5, valor = 20
+# Item(17, 25),  # Item 8: peso = 17, valor = 25
+# Item(21, 45),  # Item 9: peso = 21, valor = 45
+# Item(12, 35),  # Item 10: peso = 12, valor = 35
+
+
+capacity = 60
 
 start_time = time.time()
 
