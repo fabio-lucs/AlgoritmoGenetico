@@ -3,10 +3,28 @@ import random
 
 start_time = time.time()
 
+
 class Item:
     def __init__(self, weight, value):
         self.weight = weight
         self.value = value
+
+
+def create_randomly_items(number_of_items):
+    items = []
+    for _ in range(number_of_items):
+        weight = random.randint(1, 50)
+        value = random.randint(1, 100)
+        item = Item(weight, value)
+        items.append(item)
+    return items
+
+
+def calculate_average_weight_randomly(items):
+    total_weight = sum(item.weight for item in items)
+    average_weight = total_weight / len(items)
+    suggested_capacity = int(average_weight)
+    return suggested_capacity
 
 
 def create_population(num_individuals, num_items):
@@ -70,6 +88,7 @@ def genetic_algorithm(
     return best_individual, best_fitness
 
 
+# Exemplo do Slide
 items = [
     Item(10, 15),  # Item 1: weight = 10, value = 15
     Item(40, 90),  # Item 2: weight = 40, value = 90
