@@ -1,8 +1,7 @@
 import time
-
-start_time = time.time()
 import random
 
+start_time = time.time()
 
 class Item:
     def __init__(self, weight, value):
