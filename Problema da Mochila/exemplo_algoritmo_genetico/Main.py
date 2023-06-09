@@ -20,11 +20,11 @@ def create_randomly_items(number_of_items):
     return items
 
 
-def calculate_average_weight_randomly(items):
-    total_weight = sum(item.weight for item in items)
-    average_weight = total_weight / len(items)
-    suggested_capacity = int(average_weight)
-    return suggested_capacity
+# def calculate_average_weight_randomly(items):
+#     total_weight = sum(item.weight for item in items)
+#     average_weight = total_weight / len(items)
+#     suggested_capacity = int(average_weight)
+#     return suggested_capacity
 
 
 def create_population(num_individuals, num_items):
@@ -43,7 +43,7 @@ def fitness(individual, items, max_weight):
             total_value += items[i].value
             total_weight += items[i].weight
             if total_weight > max_weight:
-                return 0
+                return 0  # Retorna 0 se o peso total exceder o limite da mochila
     return total_value
 
 
@@ -94,8 +94,10 @@ items = [
     Item(40, 90),  # Item 2: weight = 40, value = 90
     Item(26, 50),  # Item 3: weight = 26, value = 50
     Item(32, 60),  # Item 4: weight = 32, value = 60
-    Item(8, 12),  # Item 5: weight = 8, value = 12
+    Item(8, 12),  # Item 5: weight = 8, value = 12]
 ]
+
+# items = create_randomly_items(20)
 
 max_weight = 60
 population_size = 50
@@ -119,6 +121,7 @@ for i in range(len(best_individual)):
 
 print("Total weight of the solution:", total_weight)
 print("Total value of the solution:", total_value)
+print("Total weight of the knapsack:", max_weight)
 
 end_time = time.time()
 execution_time = end_time - start_time
