@@ -125,4 +125,4 @@ print("Total weight of the knapsack:", max_weight)
 
 end_time = time.time()
 execution_time = end_time - start_time
-print(f"Tempo de execução: {execution_time} segundos")
+print(f"Run Time: {execution_time} seconds")
